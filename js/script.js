@@ -4,37 +4,39 @@ import { GUI } from "./GUI.js";
 export const $ = (selector) => document.querySelector(selector);
 export const $$ = (selector) => document.querySelectorAll(selector);
 
-let bob, bob2;
+let bobs;
+let myGUI;
+let origin, bob, bob2;
 
 function setup() {
   createCanvas(windowWidth, windowHeight, P2D, $("canvas"));
-  bob = new Pendulum(0.5 * windowHeight, 10, true);
-  bob2 = new Pendulum(0.5 * windowHeight, 30, false, color(0, 100, 255));
-  bob.show_GUI();
-  bob2.show_GUI();
+  origin = createVector(width / 2, 10);
+  bob = new Pendulum(origin, 0.5 * height, 30, color(255, 0, 0));
+  bob2 = new Pendulum(origin, 0.5 * height, 30, color(0, 100, 255), false);
+  myGUI = new GUI(bob, bob2);
 }
 
 function draw() {
   background(50);
-  bob.show(color(255, 0, 0));
-  bob.show_graphics();
   bob.update();
+  bob.show();
 
-  bob2.show(color(0, 100, 255));
-  bob2.show_graphics();
   bob2.update();
+  bob2.show();
+
+  myGUI.showGUI();
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
-function mouseDragged() {
-  bob.isClicked();
-  bob2.isClicked();
-}
+function mousePressed() {}
+
+function mouseReleased() {}
 
 window.setup = setup;
 window.draw = draw;
 window.windowResized = windowResized;
-window.mouseDragged = mouseDragged;
+window.mousePressed = mousePressed;
+window.mouseReleased = mouseReleased;
