@@ -18,6 +18,7 @@ export class Pendulum {
       y: this.origin.y + this.length * cos(this.angle),
     };
     this.mass = 32;
+    this.active = false;
   }
 
   show() {
@@ -32,6 +33,16 @@ export class Pendulum {
   show_graphics() {}
 
   update() {
+    if (this.active) {
+      this.angle = atan2(mouseX - this.origin.x, mouseY - this.origin.y);
+
+      this.velocity = 0;
+
+      this.pos = createVector(
+        this.origin.x + this.length * cos(this.angle),
+        this.origin.y + this.length * sin(this.angle)
+      );
+    }
     var aprox_term = this.real ? sin(this.angle) : this.angle;
     this.acceleration = (-gravity * aprox_term) / this.length;
     this.velocity += this.acceleration;
@@ -45,7 +56,14 @@ export class Pendulum {
     this.pos.y = this.origin.y + this.length * cos(this.angle);
   }
 
-  mousePressed() {}
+  mousePressed() {
+    const d = dist(this.pos.x, this.pos.y, mouseX, mouseY);
+    if (d < 2 * this.mass) {
+      this.active = true;
+    }
+  }
 
-  mouseReleased() {}
+  mouseReleased() {
+    this.active = false;
+  }
 }

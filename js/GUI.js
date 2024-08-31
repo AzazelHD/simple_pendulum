@@ -45,6 +45,7 @@ export class GUI {
         bob.wave.shift();
       }
     }
+
     // Y-axis
     stroke(255);
     strokeWeight(4);

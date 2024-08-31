@@ -31,9 +31,15 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
-function mousePressed() {}
+function mousePressed() {
+  bob.mousePressed();
+  bob2.mousePressed();
+}
 
-function mouseReleased() {}
+function mouseReleased() {
+  bob.mouseReleased();
+  bob2.mouseReleased();
+}
 
 window.setup = setup;
 window.draw = draw;
