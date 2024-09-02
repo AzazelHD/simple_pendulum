@@ -88,8 +88,9 @@ export class GUI {
         textAlign(CENTER, CENTER);
       }
       textSize(10);
-      text(`${i}º`, x2 + 10 * cosTheta, y2 + 10 * sinTheta);
+      text(`${90 - i}º`, x2 + 10 * cosTheta, y2 + 10 * sinTheta);
     }
+
     for (let bob of this.bobs) {
       const [r, g, b] = bob.color.levels;
       fill(r, g, b, 150);
