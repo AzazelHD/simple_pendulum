@@ -11,12 +11,22 @@ importers:
       '@types/p5':
         specifier: ^1.7.6
         version: 1.7.6
+      pnpm:
+        specifier: ^9.9.0
+        version: 9.9.0
 
 packages:
 
   '@types/p5@1.7.6':
     resolution: {integrity: sha512-6pLTOo0V3N5jZb5nTwjiv3lPHLK3Z/TjbhQUj8CTWXocUk1Z/f6OHTp3Pcwi1BhWnf5gqKUcyEb1gP0KIJuQgw==}
 
+  pnpm@9.9.0:
+    resolution: {integrity: sha512-YMGKzROL/2ldM5vmrRP36TbupnRWYNTMSndtUkfFQNDt7hpWNpXBg6ZuuRfviPK0/rH8JfMqetytx6rzQ46ZwQ==}
+    engines: {node: '>=18.12'}
+    hasBin: true
+
 snapshots:
 
   '@types/p5@1.7.6': {}
+
+  pnpm@9.9.0: {}
