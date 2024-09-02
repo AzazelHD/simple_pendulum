@@ -2,7 +2,6 @@
   "name": "simple_pendulum",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +9,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "p5": "^1.10.0",
     "@types/p5": "^1.7.6"
   }
 }
