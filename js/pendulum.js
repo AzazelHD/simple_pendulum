@@ -48,7 +48,7 @@ export class Pendulum {
     this.velocity += this.acceleration;
     // this.velocity *= this.dumping; // Friction
     this.angle += this.velocity;
-    this.angle = Math.max(-90, Math.min(90, this.angle));
+    // this.angle = Math.max(-90, Math.min(90, this.angle));
 
     this.wave.push(this.angle);
 

@@ -32,6 +32,7 @@ export class GUI {
     strokeWeight(4);
     line(xStart, yStart, xEnd, yStart);
 
+    // Wave graph
     noFill();
     strokeWeight(4);
     for (let bob of this.bobs) {
@@ -135,6 +136,7 @@ export class GUI {
     $("#controls_container").appendChild(fieldset);
 
     slider.addEventListener("input", () => {
+      // bob.velocity = 0;
       bob[value] = float(slider.value);
     });
 
